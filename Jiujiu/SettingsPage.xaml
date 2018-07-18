@@ -1,0 +1,61 @@
+﻿<Page
+    x:Class="Jiujiu.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Jiujiu"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="SettingGrid">
+        <Button  Visibility="Collapsed" Style="{StaticResource NavigationBackButtonNormalStyle}" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="65" Click="BackButton_Click"/>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+            <StackPanel VerticalAlignment="Center">
+                <Image x:Name="LogoImage" Source="/Assets/logo2.png" Height="300" Width="300"/>
+                <ProgressRing x:Name="ChangingRing"/>
+                <Border x:Name="ChangeBorder">
+                    <StackPanel x:Name="ChangePanel">
+                        <StackPanel x:Name="ChangeBackgroundBtn" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <HyperlinkButton FontFamily="Segoe MDL2 Assets" Content="&#xE771;" Click="ChangeBackgroundBtn_Click" FontSize="25"/>
+                            <HyperlinkButton Content="修改主题" Click="ChangeBackgroundBtn_Click" FontSize="25"/>
+                        </StackPanel>
+                        <GridView x:Name="BackgroundGridView" Visibility="Collapsed" IsItemClickEnabled="True" HorizontalAlignment="Center" MaxHeight="500" ItemClick="BackgroundGridView_ItemClick">
+                            <Image x:Name="blue" Source="/Assets/Background/Background_Blue.png" Height="180" Width="180" Stretch="UniformToFill"/>
+                            <Image x:Name="green" Source="/Assets/Background/Background_Green.png" Height="180" Width="180" Stretch="UniformToFill"/>
+                            <Image x:Name="pink" Source="/Assets/Background/Background_Pink.png" Height="180" Width="180" Stretch="UniformToFill"/>
+                            <Image x:Name="yellow" Source="/Assets/Background/Background_Yellow.png" Height="180" Width="180" Stretch="UniformToFill"/>
+                            <Image x:Name="add" Source="/Assets/Background/Background_add.png" Height="180" Width="180" Stretch="UniformToFill"/>
+                        </GridView>
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <Button x:Name="ConfirmBtn" Margin="0,0,5,0" HorizontalAlignment="Center" Content="保存" Visibility="Collapsed" Click="ConfirmBtn_Click"/>
+                            <Button x:Name="CancelBtn" HorizontalAlignment="Center" Content="取消" Visibility="Collapsed" Click="CancelBtn_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+                <StackPanel x:Name="FeedbackByEmailStack" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <HyperlinkButton FontFamily="Segoe MDL2 Assets" Content="&#xE715;" NavigateUri="mailto:FutureYu@live.com?subject=问题反馈" FontSize="25"/>
+                    <HyperlinkButton Content="问题反馈" NavigateUri="mailto:FutureYu@live.com?subject=问题反馈" FontSize="25"/>
+                </StackPanel>
+                <StackPanel x:Name="FeedbackByHubStack" Visibility="Collapsed" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <HyperlinkButton FontFamily="Segoe MDL2 Assets" Content="&#xED15;" Click="FeedbackBtn_Click" FontSize="25"/>
+                    <HyperlinkButton Content="问题反馈" Click="FeedbackBtn_Click" FontSize="25"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <HyperlinkButton FontFamily="Segoe MDL2 Assets" Content="&#xE734;" Click="RateBtn_Click" FontSize="25"/>
+                    <HyperlinkButton HorizontalAlignment="Center" Content="为我们评分" Click="RateBtn_Click" FontSize="25"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <HyperlinkButton FontFamily="Segoe MDL2 Assets" Content="&#xE74D;" Click="ResetBtn_Click" FontSize="25"/>
+                    <HyperlinkButton HorizontalAlignment="Center" Content="清空数据" Click="ResetBtn_Click" FontSize="25"/>
+                </StackPanel>
+                <TextBlock Margin="0,10,0,0" FontSize="25" Text="2018 ©Future Yu" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </StackPanel>
+        </ScrollViewer>
+        <UI:AdControl HorizontalAlignment="Center" ApplicationId="9nhwn10ppwp0" AdUnitId="1100027256" VerticalAlignment="Bottom" Height="150" Width="600"/>
+        <ListView HorizontalAlignment="Left" Height="100" Margin="-1119,479,0,0" VerticalAlignment="Top" Width="100"/>
+
+    </Grid>
+</Page>

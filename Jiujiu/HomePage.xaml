@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="Jiujiu.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Jiujiu"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <!--
+        <Button x:Name="PracticeBtn" Content="练习模式" FontSize="25" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Style="{StaticResource ButtonRevealStyle}" Height="200" Width="200" Click="PracticeBtn_Click"/>
+        <Button x:Name="TableBtn" Content="九九乘法表" FontSize="25" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Top" Style="{StaticResource ButtonRevealStyle}" Height="200" Width="200" Click="TableBtn_Click"/>
+        <Button x:Name="GameBtn" Content="比赛模式" FontSize="25" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Margin="0,50,0,0" VerticalAlignment="Top" Style="{StaticResource ButtonRevealStyle}" Height="200" Width="200" Click="GameBtn_Click"/>
+        <Button x:Name="PersonBtn" Content="个人中心" FontSize="25" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Right" Margin="0,50,0,0" VerticalAlignment="Top" Style="{StaticResource ButtonRevealStyle}" Height="200" Width="200" Click="PersonBtn_Click"/>
+        <Button x:Name="SettingsBtn" Content="设置/关于" FontSize="25" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="3" Margin="0,50,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource ButtonRevealStyle}" Height="200" Width="450" Click="SettingsBtn_Click" />
+        -->
+        <StackPanel HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1">
+            <Image x:Name="LogoImage" Source="/Assets/logo2.png" Height="300" Width="300"/>
+        <TextBlock HorizontalAlignment="Center" FontSize="25">欢迎使用九九乘法训练！</TextBlock>
+        <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="25">快从左边栏选取你要的功能吧！</TextBlock>
+        </StackPanel>
+
+    </Grid>
+</Page>

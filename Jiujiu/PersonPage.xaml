@@ -1,0 +1,95 @@
+﻿<Page
+    x:Class="Jiujiu.PersonPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Jiujiu"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ads="using:Microsoft.Advertising.WinRT.UI"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button  Visibility="Collapsed" Style="{StaticResource NavigationBackButtonNormalStyle}" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="65" Click="BackButton_Click"/>
+
+        <Pivot Grid.Row="1">
+            <PivotItem Header="成就" FontSize="25">
+                <Grid>
+                    <StackPanel>
+                        <ListView x:Name="AchievementList" SelectionMode="Single" FontSize="25">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock  Text="{Binding}" FontSize="25"/>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                        <Button x:Name="ClearAchievementRecordBtn" Content="清空记录" Margin="0,20,0,0">
+                            <Button.Flyout>
+                                <Flyout>
+                                    <StackPanel>
+                                        <TextBlock Style="{ThemeResource BaseTextBlockStyle}" Text="成就记录将被清空且无法恢复，确认继续?" Margin="0,0,0,12" />
+                                        <Button Click="ClearAchievementRecordBtn_ClickAsync" Content="是的，请清空" />
+                                    </StackPanel>
+                                </Flyout>
+                            </Button.Flyout>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="数据统计" FontSize="25">
+                <Grid>
+                    <StackPanel>
+                        <ListView x:Name="TotalList" SelectionMode="Single" FontSize="25">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock  Text="{Binding}" FontSize="25"/>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                        <Button x:Name="ClearTotalRecordBtn" Content="清空记录" Margin="0,20,0,0">
+                            <Button.Flyout>
+                                <Flyout>
+                                    <StackPanel>
+                                        <TextBlock Style="{ThemeResource BaseTextBlockStyle}" Text="数据统计将被清空且无法恢复，确认继续?" Margin="0,0,0,12" />
+                                        <Button Click="ClearTotalRecordBtn_ClickAsync" Content="是的，请清空" />
+                                    </StackPanel>
+                                </Flyout>
+                            </Button.Flyout>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="比赛记录" FontSize="25">
+                <Grid>
+                    <StackPanel>
+                        <ListView x:Name="GameList" SelectionMode="Single" FontSize="25">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock  Text="{Binding}" FontSize="25"/>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                        <Button x:Name="ClearGameRecordBtn" Content="清空记录" Margin="0,20,0,0">
+                            <Button.Flyout>
+                                <Flyout>
+                                    <StackPanel>
+                                        <TextBlock Style="{ThemeResource BaseTextBlockStyle}" Text="比赛记录将被清空且无法恢复，确认继续?" Margin="0,0,0,12" />
+                                        <Button Click="ClearGameRecordBtn_ClickAsync" Content="是的，请清空" />
+                                    </StackPanel>
+                                </Flyout>
+                            </Button.Flyout>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </PivotItem>
+        </Pivot>
+        <ads:AdControl Grid.Row="1" HorizontalAlignment="Center" ApplicationId="9nhwn10ppwp0" AdUnitId="1100027257" VerticalAlignment="Bottom" Height="150" Width="600"/>
+    </Grid>
+</Page>
